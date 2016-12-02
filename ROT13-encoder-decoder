@@ -1,0 +1,25 @@
+import string
+#accept one argument
+def encode_rot13(letter):
+	
+# Convert the string to all uppercase before encoding
+
+	rot13 = str.maketrans( 
+	'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 
+	'NOPQRSTUVWXYZABCDEFGHIJKLM')
+	translate = str.translate(letter.upper(), rot13)
+
+# If the string contains any spaces, pass them through unchanged
+# Return the encoded string
+	return translate
+print(encode_rot13('Hello World'))
+
+def decode_rot13(letter):
+	rot13 = str.maketrans( 
+	'NOPQRSTUVWXYZABCDEFGHIJKLM','ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	)
+	translate = str.translate(letter.upper(), rot13)
+# If the string contains any spaces, pass them through unchanged
+# Return the encoded string
+	return translate
+print(decode_rot13('URYYB JBEYQ'))
